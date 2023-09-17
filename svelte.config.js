@@ -9,9 +9,9 @@ export default {
   // for more information about preprocessors
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    paths: {
+      base: dev ? '' : '/rrrreplace'
+    }
   },
-  paths: {
-    base: dev ? '' : '/rrrreplace'
-  }
 }
