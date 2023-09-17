@@ -1,0 +1,77 @@
+$color: #3dc;
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-image: url("bg.jpg");
+  color: $color;
+  font-family: monospace;
+}
+
+main
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+main div {
+  flex-basis: 49%;
+  padding: 1em;
+}
+
+input,
+textarea,
+.textarea-like-wrap,
+table,
+td
+{
+  border: 1.5px solid $color;
+  background: rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 0px 1.5em $color;
+  color: $color;
+  font-size: 1rem;
+  letter-spacing: normal;
+  padding: 0.25em;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.25em;
+}
+.textarea-like-wrap {
+    margin: 0;
+}
+.textarea-like {
+    margin: 0;
+    padding: 0;
+}
+input:focus, textarea:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece
+{
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  border: solid 1px $color;
+}
+.textarea-like::-webkit-scrollbar {
+    display: none;
+}
+
+.errorMessage {
+    background-color: rgba(240, 0, 0, 0.7);
+    color: #000;
+    border: solid 1px red;
+    padding: 0.1em 0.5em;
+    display: block;
+    font-weight: bold;
+}
