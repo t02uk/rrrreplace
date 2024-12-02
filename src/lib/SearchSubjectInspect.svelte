@@ -85,8 +85,8 @@
 .token__matched {
     color: #fff;
     font-weight: lighter;
-    border-bottom: solid 1px hsla(var(--hue), 90%, 90%, 0.7);
-    background-color: hsla(var(--hue), 80%, 30%, 0.4);
+    border-bottom: solid 1px hsla(var(--hue), 10%, 60%, 1.0);
+    background-color: hsla(var(--hue), 30%, 70%, 1.0);
 }
 
 
@@ -110,7 +110,7 @@ textarea {
     border: none;
 }
 textarea::selection {
-    background: rgba(255, 255, 255, 0.90);
+    /* background: rgba(255, 255, 255, 0.90); */
 }
 
 .textarea-like-wrap {

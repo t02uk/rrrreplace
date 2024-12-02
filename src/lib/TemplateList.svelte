@@ -9,11 +9,10 @@
 
 </style>
 
-<select bind:value={selectedIndex}>
+<select bind:value={selectedIndex} on:change={() => onApply(templates[selectedIndex])}>
     {#each templates as template, index}
         <option value={index}>
             {template.title}
         </option>
     {/each}
 </select>
-<button on:click={() => onApply(templates[selectedIndex])}>apply</button>

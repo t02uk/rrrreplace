@@ -28,14 +28,6 @@ table {
     border-collapse: collapse;
     min-width: 100%
 }
-table thead {
-    /* background-color: #f00; */
-    /* color: #fff; */
-}
-td {
-    /* border:solid 1px red; */
-    /* padding: 0.3em; */
-}
 </style>
 
 {#if errorMessage.length}

@@ -20,10 +20,11 @@
   }
 
   type Action = "regular" | "template";
-  let action: Action = "template"
+  let action: Action = "regular"
 
-  function switchAction(nextAction) {
+  function switchAction(nextAction: Action) {
     action = nextAction;
+    templates = TemplateRepository.getAll();
   }
 
   function handleApplyTemplate(template: Template) {
@@ -36,6 +37,7 @@
 {#if action == "regular"}
   <button on:click={() => switchAction('template')}>edit template</button>
   <TemplateList templates={templates} onApply={handleApplyTemplate}></TemplateList>
+  <button on:click={() => navigator.clipboard.writeText(replacePreview)}>copy</button>
 <main>
     <div class="side-by-side">
     <SearchPattern bind:value={searchPattern} />
@@ -43,7 +45,7 @@
     </div>
     <div class="side-by-side">
       <ReplacePattern bind:value={replacePattern} />
-      <ReplacePreview searchPattern={searchPattern} searchSubject={searchSubject} replacePattern={replacePattern} />
+      <ReplacePreview searchPattern={searchPattern} searchSubject={searchSubject} replacePattern={replacePattern} bind:replacePreview={replacePreview}/>
       <!-- <PreviewTable searchPattern={searchPattern} searchSubject={searchSubject} /> -->
     </div>
 </main>

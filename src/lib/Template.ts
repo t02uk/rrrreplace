@@ -5,12 +5,12 @@ export type Template = {
 };
 
 export class TemplateRepository {
-    static identity = "";
+    static identity = "templates";
     static replaceAll(templates: Template[]) {
         localStorage.setItem(this.identity, JSON.stringify(templates));
     }
     static getAll() {
-        return JSON.parse(localStorage.getItem(this.identity));
+        return JSON.parse(localStorage.getItem(this.identity)) ?? [];
     }
     static getAt(index: number) {
         return this.getAll()[index];

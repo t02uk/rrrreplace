@@ -2,6 +2,7 @@
     export let searchPattern: string;
     export let searchSubject: string;
     export let replacePattern: string;
+    export let replacePreview: string;
     type ReplacePreviewLine = {
         type: "mathed",
         text: String,
@@ -18,7 +19,7 @@
             
             const regexp = new RegExp(searchPattern, "");
             const subjectLines = searchSubject.split(/\n/);
-            const replaced = subjectLines.map((subjectLine) => {
+            const replaced = subjectLines.map((subjectLine): ReplacePreviewLine => {
                 if (regexp.test(subjectLine)) {
                     return {
                         type: "mathed",
@@ -31,6 +32,7 @@
                 }
             });
             replacePreviewLines = replaced;
+            replacePreview = replacePreviewLines.filter((_) => _.type === "mathed").map((_) => _.text).join("\n");
         } catch (e) {
             errorMessage = e.toString();
         }
