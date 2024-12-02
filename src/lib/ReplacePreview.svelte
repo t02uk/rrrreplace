@@ -1,7 +1,7 @@
 <script lang="ts">
-    export let searchPattern;
-    export let searchSubject;
-    export let replacePattern;
+    export let searchPattern: string;
+    export let searchSubject: string;
+    export let replacePattern: string;
     type ReplacePreviewLine = {
         type: "mathed",
         text: String,
@@ -49,15 +49,12 @@
 <div class="textarea-like-wrap">
    <code class="textarea-like">
         {#each replacePreviewLines as line, index}
-            {#if line.type == "mathed"}
-                {line.text}
-            {:else}
-                <span class="unmathed">(unmathed)</span>
-            {/if}
-            <!-- {#if replacePreviewLines.length === 1 && replacePreviewLines[0].text === ""} -->
-                <!-- &nbsp; -->
-            <!-- {/if} -->
-            {#if index != replacePreviewLines.length - 1}
+            {#if line.type == "mathed"}<!--
+                --><span>{line.text}</span><!--
+            -->{:else}<!--
+                --><span class="unmathed">unmathed</span><!--
+            -->{/if}<!--
+            -->{#if index != replacePreviewLines.length - 1}
                 <br>
             {/if}
         {/each}

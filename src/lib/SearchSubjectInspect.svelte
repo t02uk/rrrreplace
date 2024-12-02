@@ -86,7 +86,7 @@
     color: #fff;
     font-weight: lighter;
     border-bottom: solid 1px hsla(var(--hue), 90%, 90%, 0.7);
-    background-color: hsla(var(--hue), 90%, 30%, 0.6);
+    background-color: hsla(var(--hue), 80%, 30%, 0.4);
 }
 
 

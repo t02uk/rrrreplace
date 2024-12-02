@@ -1,11 +1,11 @@
-$color: #3dc;
+$color: #852828;
 
 html, body {
   height: 100%;
   margin: 0;
 }
 body {
-  background-image: url("/bg.jpg");
+  background-color: #ffd;
   color: $color;
   font-family: monospace;
 }
@@ -28,8 +28,7 @@ table,
 td
 {
   border: 1.5px solid $color;
-  background: rgba(0, 0, 0, 0.7);
-  text-shadow: 0px 0px 1.5em $color;
+  background: #ffc;
   color: $color;
   font-size: 1rem;
   letter-spacing: normal;
@@ -41,6 +40,7 @@ td
 }
 .textarea-like-wrap {
     margin: 0;
+    overflow: auto;
 }
 .textarea-like {
     margin: 0;
@@ -60,7 +60,7 @@ input:focus, textarea:focus {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 0, 0);
+  background-color: $color;
   border: solid 1px $color;
 }
 .textarea-like::-webkit-scrollbar {
